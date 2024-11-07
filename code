@@ -1,0 +1,24 @@
+from config import token
+import telebot
+
+
+bot = telebot.TeleBot(token)
+
+@bot.message_handler(commands=['help', 'start'])
+def send_welcome(message):
+    bot.reply_to(message, """\
+Hi there, I am EcologiaRusBot.
+I tell how many time certain things decompose and how do you sort them.\
+""")
+
+@bot.message_handler(commands=['paper'])
+def send_welcome(message):
+    bot.reply_to(message, "Paper is another common household item that is highly recyclable. It only takes 2 to 6 weeks to decompose, but it can also be recycled and turned into a new product. Paper can be recycled up to 6 times before the fibers become too weak to be reused.")
+
+@bot.message_handler(commands=['sodacan'])
+def send_welcome(message):
+    bot.reply_to(message, "Soda can - 200 years: Here is one of the many reasons why countries around the world require soda cans to be recycled. It creates havoc in oceans and landfills due to the difficulty it takes to break it down. Honestly, there are valuable metals which can be reused for other products and there is no reason to let a landfill handle it.")
+
+@bot.message_handler(commands=['diapers'])
+def send_welcome(message):
+    bot.reply_to(message, "Regular diapers, made mostly of plastic, can take up to 500 years to decompose. They can decompose even longer if they are tied inside a plastic bag before being discarded.")
